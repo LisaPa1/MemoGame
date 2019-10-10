@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import CardMemo from '../card';
+import React, { useEffect } from 'react';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 
 import Grid from '@material-ui/core/Grid';
+
+import CardMemo from '../card';
 
 const CardsList = () => {
 
@@ -23,9 +24,10 @@ const CardsList = () => {
   return (
     <Grid container spacing={2}>
       {
-        cardsRandomArray.map((card) => {
+        cardsRandomArray.map((card, index) => {
+          
           return (
-            <Grid item xs={3}>
+            <Grid item xs={3} key={index}>
               <CardMemo card={card} />
             </Grid>
           )
