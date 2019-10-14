@@ -1,34 +1,23 @@
-import React, { useEffect } from 'react';
-import { useStoreState, useStoreActions } from 'easy-peasy';
+import React from 'react';
 
 import Grid from '@material-ui/core/Grid';
 
-import CardMemo from '../card';
+import CardMemoContainer from '../../containers/CardMemoContainer';
 
-const CardsList = () => {
+const CardsList = ({array}) => {
 
-  const random = useStoreActions(actions => actions.random);
-  const cardsRandomArray = useStoreState(state => state.cardsRandomArray);
-
-  useEffect(() => {
-    if (!cardsRandomArray[0]) {
-      random()
-    }
-  })
-
-
-  if (!cardsRandomArray) {
+  if (!array) {
     return null
   }
   
   return (
     <Grid container spacing={2}>
       {
-        cardsRandomArray.map((card, index) => {
+        array.map((card, index) => {
           
           return (
             <Grid item xs={3} key={index}>
-              <CardMemo card={card} />
+              <CardMemoContainer card={card} />
             </Grid>
           )
         })

@@ -1,5 +1,5 @@
 import React from 'react';
-import CardsList from './components/cards';
+import CardsListContainer from './containers/CardsListContainer';
 import model from './model';
 import { createStore, StoreProvider } from 'easy-peasy';
 
@@ -12,7 +12,7 @@ function App() {
     <StoreProvider store={store}>
       <Container fixed>
         <h1>Memo game</h1>
-        <CardsList />
+        <CardsListContainer />
       </Container>
     </StoreProvider>
   );
