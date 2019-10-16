@@ -10,8 +10,8 @@ const store = createStore(model);
 function App() {
   return (
     <StoreProvider store={store}>
-      <Container fixed>
-        <h1>Memo game</h1>
+      <Container maxWidth='sm'>
+        <h1 className='title'>Memo game</h1>
         <CardsListContainer />
       </Container>
     </StoreProvider>

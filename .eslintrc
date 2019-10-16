@@ -1,0 +1,68 @@
+{
+    "extends": [
+      "airbnb",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 8,
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "settings": {
+      "import/resolver":"webpack"
+    },
+    "rules": {
+      "object-curly-spacing": ["error", "always"],
+      "comma-dangle": ["error", {
+        "functions": "never",
+        "arrays": "ignore",
+        "objects": "ignore",
+        "exports": "ignore",
+        "imports": "ignore"
+      }],
+      "import/prefer-default-export": "off",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+      "react/jsx-uses-react": "error",
+      "react/jsx-uses-vars": "error",
+      "react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
+      "no-console": ["warn", {
+        "allow": ["warn","log", "error"]
+      }],
+      "react/no-danger": "off",
+      "react/forbid-prop-types": "off",
+      "react/no-unused-prop-types": "warn",
+      "react/no-unused-state": "warn",
+      "react/jsx-boolean-value": "off",
+      "no-var": "error",
+      "func-style":"error",
+      "import/no-unresolved": "off"
+    },
+    "plugins": [
+    "react",
+    "import"
+    ],
+    "overrides": [
+      {
+        "files": ["test/**/*.js"],
+        "env": {
+          "mocha": true
+        },
+        "rules": {
+          "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.theme.js", "**/*.theme.js"]}],
+          "import/no-dynamic-require": "off",
+          "global-require": "off",
+          "no-new":"off"
+        }
+      }
+    ] 
+  }

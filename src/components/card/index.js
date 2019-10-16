@@ -14,16 +14,16 @@ const CardMemo = ({
   return (
     <>
       {
-        card.completed ? <Card><CardContent>Found</CardContent></Card> :
-          <Card onClick={() => {
+        card.completed ? <Card />:
+          <Card classes={{ root: 'card' }} onClick={() => {
             second === null && getClick(card.value)
           }
           }
           >
             {
               shown ?
-                <CardContent>
-                  <Icon className={card.image} />
+                <CardContent classes={{ root: 'cardContent' }}>
+                  <Icon className={card.image} fontSize="large" classes={{ root: 'icon' }} />
                 </CardContent>
                 :
                 <CardContent />
