@@ -11,7 +11,9 @@ const CardMemoContainer = ({ card }) => {
 
   useEffect(() => {
     if (second === first && second !== null) {
+      setTimeout(() => {
       complete(second)
+    }, 800);
     }
     if (second !== null && first !== null && second !== first) {
       setTimeout(() => {
