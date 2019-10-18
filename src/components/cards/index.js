@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 
 import CardMemoContainer from '../../containers/CardMemoContainer';
 
-const CardsList = ({array}) => {
+const CardsList = ({ array }) => {
 
   if (!array) {
     return null
@@ -14,7 +14,6 @@ const CardsList = ({array}) => {
     <Grid container spacing={2}>
       {
         array.map((card, index) => {
-          
           return (
             <Grid item xs={3} key={index}>
               <CardMemoContainer card={card} />
