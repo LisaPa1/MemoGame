@@ -14,7 +14,7 @@ const CardMemo = ({
   return (
     <>
       {
-        card.completed ? <Card />:
+        card.completed ? <Card classes={{ root: 'foundCard' }}/>:
           <Card classes={{ root: 'card' }} onClick={() => {
             second === null && getClick(card.value)
           }

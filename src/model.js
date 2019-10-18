@@ -25,7 +25,31 @@ export default {
       value: 4,
       image: "fas fa-anchor",
       completed: false
-    }
+    },
+    {
+      name: "cards5",
+      value: 5,
+      image: "fas fa-mug-hot",
+      completed: false
+    },
+    {
+      name: "cards6",
+      value: 6,
+      image: "fas fa-fan",
+      completed: false
+    },
+    {
+      name: "cards7",
+      value: 7,
+      image: "fas fa-snowflake",
+      completed: false
+    },
+    {
+      name: "cards8",
+      value: 8,
+      image: "fas fa-palette",
+      completed: false
+    },
   ],
   cardsRandomArray : [],
   selected: [
@@ -36,9 +60,9 @@ export default {
       value: null
     }
   ],
-  // Actions
-  random: action((state) => {
-    const newArray = state.cards.concat(state.cards)
+  random: action((state, level) => {
+    const levelArray = state.cards.slice(0, level)
+    const newArray = levelArray.concat(levelArray)
     const blend = (array) => {
             for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -47,7 +71,6 @@ export default {
       return array
     }
     state.cardsRandomArray = blend(newArray)
-
   }),
   toggle: action((state, value) => {
     state.selected[0].value !== null ? state.selected[1].value = value : state.selected[0].value = value

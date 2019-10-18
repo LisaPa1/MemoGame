@@ -56,6 +56,14 @@ $screen-xl-min: 1200px;
   padding-top: 25% !important;
 }
 
+.foundCard {
+  opacity: 0.1;
+  height:0;
+  width:100%;
+  padding-bottom:100%;
+  display: block;
+}
+
 .icon {
   width: auto !important;
   height: auto !important;
